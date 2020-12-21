@@ -1,24 +1,28 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
+| Column          | Type    | Options     |
+| --------------- | ------- | ----------- |
+| last_name       | string  | null: false |
+| first_name      | string  | null: false |
+| employee_number | integer | null: false |
+| division_id     | integer | null: false |
+| position_id     | integer | null: false |
+| password        | string  | null: false |
+| goal_count      | integer |             |
 
-Things you may want to cover:
+### Association
+- has_many :goals
 
-* Ruby version
+## goals テーブル
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| title            | string     | null: false                    |
+| description      | text       | null: false                    |
+| deadline         | date       | null: false                    |
+| progress         | integer    |                                |
+| done             | boolean    | default: false, null: false    |
+| user             | references | null: false, foreign_key: true |
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to : user
