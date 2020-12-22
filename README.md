@@ -10,6 +10,7 @@
 | position_id     | integer | null: false |
 | password        | string  | null: false |
 | goal_count      | integer |             |
+| email           | string  |             |
 
 ### Association
 - has_many :goals
