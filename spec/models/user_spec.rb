@@ -55,6 +55,13 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('Employee numberは半角数字で入力してください')
       end
 
+      it '重複したemployee_numberが存在する場合登録できない' do
+        @user.save
+        another_user = FactoryBot.build(:user, employee_number: @user.employee_number)
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include('Employee numberはすでに存在します')
+      end
+
       it 'division_idが空だと登録できない' do
         @user.division_id = nil
         @user.valid?
