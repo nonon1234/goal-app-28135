@@ -12,7 +12,6 @@ class User < ApplicationRecord
     validates :division_id, :position_id, numericality: { other_than: 0 }
   end
 
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'は英数字混合にしてください'
-
 end
