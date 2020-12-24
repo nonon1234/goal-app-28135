@@ -2,6 +2,7 @@ class GoalsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new]
 
   def index
+    @goals = Goal.all.order('created_at ASC')
   end
 
   def new
