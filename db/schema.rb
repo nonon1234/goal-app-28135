@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(version: 2020_12_22_142234) do
     t.string "title", null: false
     t.text "description", null: false
     t.date "deadline", null: false
-    t.integer "progress"
+    t.integer "progress", default: 0
     t.boolean "done", default: false, null: false
+    t.boolean "important", default: false, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
