@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer :employee_number,   null: false
       t.integer :division_id,       null: false
       t.integer :position_id,       null: false
-      t.integer :goal_count
+      t.integer :goal_count,        default: 0
       t.string :email,              default: ""
       t.string :encrypted_password, null: false, default: ""
 

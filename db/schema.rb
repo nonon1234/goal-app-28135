@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_142234) do
     t.integer "employee_number", null: false
     t.integer "division_id", null: false
     t.integer "position_id", null: false
-    t.integer "goal_count"
+    t.integer "goal_count", default: 0
     t.string "email", default: ""
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
