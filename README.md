@@ -9,7 +9,7 @@
 | division_id     | integer | null: false |
 | position_id     | integer | null: false |
 | password        | string  | null: false |
-| goal_count      | integer |             |
+| goal_count      | integer | default: 0  |
 | email           | string  |             |
 
 ### Association
