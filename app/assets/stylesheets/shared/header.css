@@ -36,7 +36,14 @@ header {
   font-weight: bold;
 }
 
+.header-goal-count {
+  color: #fff;
+  margin-right: 3vw;
+}
+
 .logout {
+  margin-left: 3vw;
   text-decoration: none;
   color: #fff;
 }
+
