@@ -1,0 +1,111 @@
+a {
+  text-decoration: none;
+}
+
+.goal-main {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'ヒラギノ丸ゴ ProN W4', 'Hiragino Maru Gothic ProN';
+}
+
+.goal-object {
+  width: 700px;
+  height: 160px;
+  background-color: white;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.goal-header {
+  width: 100%;
+  height: 48px;
+  font-size: 22px;
+  background-color: #4074BE;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.goal-header-text {
+  line-height: 48px;
+  color: #fff;
+  margin-left: 14px;
+}
+
+.goal-deadline {
+  line-height: 48px;
+  color: #fff;
+  margin-right: 14px;
+  font-size: 18px;
+}
+
+.goal-info-area {
+  display: flex;
+}
+
+.goal-description-text {
+  width: 480px;
+  font-size: 14px;
+  padding: 15px;
+  color: #444;
+}
+
+.goal-progress-area {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.goal-progress {
+  margin: 15px 10px;
+  text-align: center;
+  line-height: 80px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px dotted #ccc;
+  color: #ccc;
+}
+
+.goal-edit-area {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 5px;
+}
+
+.goal-edit-btn {
+  padding: 10px;
+  background: #5DBB8B;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  border: none;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.goal-create-btn {
+  width: 120px;
+  background: #5DBB8B;
+  text-align: center;
+  border-radius: 4px;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.create-btn-text {
+  counter-reset: #fff;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5p;
+}
