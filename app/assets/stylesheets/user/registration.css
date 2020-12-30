@@ -9,7 +9,7 @@
 }
 
 .form-wrap {
-  width: 50%;
+  width: 400px;
   background-color: white;
   border-radius: 15px;
 }
@@ -30,7 +30,7 @@
 }
 
 .form-group {
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -51,7 +51,7 @@
 }
 
 .input-default{
-  width: 248px;
+  width: 220px;
   margin-top: 5px;
   height: 18px;
   padding: 10px 16px 8px;
@@ -113,7 +113,7 @@
 }
 
 .register-red-btn {
-  width: 50%;
+  width: 100px;
   background: #ea352d;
   color: #fff;
   line-height: 48px;
