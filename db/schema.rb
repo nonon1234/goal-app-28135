@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(version: 2020_12_22_142234) do
     t.string "title", null: false
     t.text "description", null: false
     t.date "deadline", null: false
-    t.integer "progress"
+    t.integer "progress", default: 0
     t.boolean "done", default: false, null: false
+    t.boolean "important", default: false, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -30,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_12_22_142234) do
     t.integer "employee_number", null: false
     t.integer "division_id", null: false
     t.integer "position_id", null: false
-    t.integer "goal_count"
+    t.integer "goal_count", default: 0
     t.string "email", default: ""
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

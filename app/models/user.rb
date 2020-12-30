@@ -3,6 +3,8 @@ class User < ApplicationRecord
   belongs_to_active_hash :division
   belongs_to_active_hash :position
 
+  has_many :goals
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

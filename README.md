@@ -9,7 +9,7 @@
 | division_id     | integer | null: false |
 | position_id     | integer | null: false |
 | password        | string  | null: false |
-| goal_count      | integer |             |
+| goal_count      | integer | default: 0  |
 | email           | string  |             |
 
 ### Association
@@ -21,8 +21,9 @@
 | title            | string     | null: false                    |
 | description      | text       | null: false                    |
 | deadline         | date       | null: false                    |
-| progress         | integer    |                                |
+| progress         | integer    | default: 0                     |
 | done             | boolean    | default: false, null: false    |
+| important        | boolean    | default: false, null: false    |
 | user             | references | null: false, foreign_key: true |
 
 ### Association

@@ -1,0 +1,10 @@
+<header class='top-page-header'>
+  <%= link_to 'GOAL_APP_', root_path, class: "app-title" %>
+  <div class='nav'>
+    <ul class='lists-right'>
+        <li><%= link_to current_user.last_name, "#", class: "user-last-name" %></li>
+        <li class='header-goal-count'>達成目標数：<%= current_user.goal_count %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    </ul>
+  </div>
+</header>

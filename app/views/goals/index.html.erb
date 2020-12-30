@@ -1,5 +1,24 @@
-index
+<%= render "shared/header" %>
 
-<% if user_signed_in? %>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+<%# 目標一覧 %>
+<% @goals.each do |goal| %>
+  <% if current_user.id == goal.user_id %>
+-------------------------------<br>
+  目標  <%= goal.title %> <br>
+  期日  <%= goal.deadline %> <br>
+  進捗  <%= goal.progress %> % <br>
+-------------------------------<br>
+  <% end %>
 <% end %>
+
+
+    <%# 目標がない場合のダミー %>
+    <% unless @goals.exists? %>
+      まだ目標がありません。<br>
+      新しい目標を立てましょう。<br>
+    <% end %>
+      <%# /目標がない場合のダミー %>
+
+<a href="/goals/new">目標作成</a>
+
+<%= render "shared/footer" %>
