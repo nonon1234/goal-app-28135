@@ -1,0 +1,42 @@
+.goal-show-btn {
+  width: 40%;
+  padding: 10px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-btn {
+  width: 150px;
+  background: #5DBB8B;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.goal-destroy-btn {
+  width: 80px;
+  background: #ea352d;
+  color: #fff;
+  line-height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin: 10px;
+  text-align: center;
+}
+
+.check-box-group {
+  margin-left: 10px;
+}
+
+.checkbox-important,
+.checkbox-text {
+  cursor: pointer;
+}

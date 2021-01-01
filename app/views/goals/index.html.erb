@@ -25,7 +25,7 @@
         </div>
         <div class='goal-edit-area'>
           <ul>
-            <li><%= link_to '　詳細　', goal_path(goal.id), class: "goal-edit-btn" %></li>
+            <li><%= link_to '　編集　', edit_goal_path(goal.id), method: :get, class: "goal-edit-btn" %></li>
             <li><%= link_to '進捗入力', "#", class: "goal-edit-btn" %></li>
           </ul>
         </div>
