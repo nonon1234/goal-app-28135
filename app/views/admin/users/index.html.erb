@@ -35,8 +35,8 @@
           <span class='user-goal-title'>目標がまだ登録されていません。</span>
         <% end %>
 
-        <% user.goals.each do |goal| %>
-          <% if user.id == goal.user_id && goal.important %>
+        <% user.goals.first(1).each do |goal| %>
+          <% if user.id == goal.user_id %>
             <div class='user-goal-title'>
               <%= goal.title %>
             </div>
