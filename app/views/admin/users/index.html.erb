@@ -4,6 +4,8 @@
 <div class='employee-main'>
   <% @users.each do |user| %>
     <div class='user-object'>
+
+      <%#--- 上部の社員情報 ---%>
       <div class='user-header'>
         <div class='user-icon'>
         </div>
@@ -21,26 +23,40 @@
           </h3>
         </div>
       </div>
+      <%#--- 上部の社員情報 ---%>
+
       <div class='line'></div>
+
+      <%#--- 下部の目標情報 ---%>
       <div class='user-footer'>
-        <div class='user-goal-title'>
-          目標タイトル
-        </div>
-        <div class='user-goal-info'>
-          あああああああああああああああああああああああああ<br>
-          あああああああああああああああああああああああああ<br>
-          あいうえおかきくけこ
-        </div>
-        <div class='user-goal-progress'>
-          進捗：28%
-        </div>
-        <div class='user-goal-deadline'>
-          期日：2021-04-01
-        </div>
+
+        <%# 目標が未登録の場合 %>
+        <% unless @goals.exists?(user_id: user.id) %>
+          <span class='user-goal-title'>目標がまだ登録されていません。</span>
+        <% end %>
+
+        <% user.goals.each do |goal| %>
+          <% if user.id == goal.user_id && goal.important %>
+            <div class='user-goal-title'>
+              <%= goal.title %>
+            </div>
+            <div class='user-goal-info'>
+              <%= goal.description %>
+            </div>
+            <div class='user-goal-progress'>
+              進捗：<%= goal.progress %>％
+            </div>
+            <div class='user-goal-deadline'>
+              期日：<%= goal.deadline %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
+      <%#--- 下部の目標情報 ---%>
 
     </div>
   <% end %>
 </div>
+
 
 <%= render "shared/footer" %>
