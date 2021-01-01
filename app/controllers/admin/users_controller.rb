@@ -2,7 +2,8 @@ class Admin::UsersController < ApplicationController
   before_action :admin_user
 
   def index
-    @users = User.all.order(employee_number: :asc)
+    @users = User.includes(:goals)
+    @goals = Goal.all
   end
 
   private
