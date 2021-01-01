@@ -1,0 +1,73 @@
+<%= render "shared/header" %>
+
+<%= form_with model: @goal, class: 'goal-main', local: true do |f| %>
+<div class='goal-form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      目標を変更
+    </h1>
+  </div>
+
+  <%# エラーメッセージ表示 %>
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <%# 目標内容の設定 %>
+  <div class='form-group'>
+    <div class='form-text-wrap'>
+      <label class='form-text'>目標タイトル</label>
+    </div>
+    <%= f.text_area :title, class:"input-goal-title", id:"goal-title", placeholder:"目標（必須 25文字まで)", maxlength:"25" %>
+  </div>
+
+  <div class='form-group'>
+    <div class='form-text-wrap'>
+      <label class='form-text'>目標の内容</label>
+    </div>
+    <%= f.text_area :description, class:"goal-description", id:"goal-info", placeholder:"目標の説明（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+  </div>
+
+  <div class='form-group'>
+    <div class='form-text-wrap'>
+      <label class='form-text'>目標期日</label>
+    </div>
+    <div class='input-deadline-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :deadline,
+                    class:'select-deadline',
+                    id:"deadline-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 2020,
+                    end_year: (Time.now.year + 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <div class='form-text-wrap'>
+      <label class='form-text'>優先目標</label>
+    </div>
+    <%= f.check_box :important, {class:"input-goal-important"}, true, false %>
+  </div>
+
+  <div class='form-group'>
+    <div class='form-text-wrap'>
+      <label class='form-text'>進捗入力</label>
+    </div>
+    <%= f.range_field :progress,in: 0..100, class:"input-goal-progress", id:"goal-progress" %>
+    <span class='progress_value' id='progress'></span>％
+  </div>
+  <%# /目標内容の設定 %>
+
+  <%# 下部ボタン %>
+  <div class="goal-show-btn">
+      <%= f.submit "目標を変更する" ,class:"edit-btn" %>
+      <%= link_to '削除', goal_path(@goal.id), method: :delete, class:"goal-destroy-btn" %>
+  </div>
+  <%# /下部ボタン %>
+</div>
+<% end %>
+
+<%= render "shared/footer" %>
