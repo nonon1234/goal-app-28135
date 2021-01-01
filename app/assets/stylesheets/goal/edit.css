@@ -31,3 +31,12 @@
   margin: 10px;
   text-align: center;
 }
+
+.check-box-group {
+  margin-left: 10px;
+}
+
+.checkbox-important,
+.checkbox-text {
+  cursor: pointer;
+}

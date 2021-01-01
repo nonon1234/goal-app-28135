@@ -49,7 +49,10 @@
     <div class='form-text-wrap'>
       <label class='form-text'>優先目標</label>
     </div>
-    <%= f.check_box :important, {class:"input-goal-important"}, true, false %>
+    <div class="check-box-group">
+      <%= f.check_box :important, {class:"checkbox-important", id:"input-important"}, true, false %>
+      <label for="input-important" class="checkbox-text">重要目標に指定する</label>
+    </div>
   </div>
 
   <div class='form-group'>
