@@ -1,24 +1,51 @@
 <%= render "shared/header" %>
 
 <%# 目標一覧 %>
+<div class='goal-main'>
 <% @goals.each do |goal| %>
   <% if current_user.id == goal.user_id %>
--------------------------------<br>
-  目標  <%= goal.title %> <br>
-  期日  <%= goal.deadline %> <br>
-  進捗  <%= goal.progress %> % <br>
--------------------------------<br>
+    <div class='goal-object'>
+      <div class='goal-header'>
+        <h1 class='goal-header-text'>
+          <%= goal.title %> 
+        </h1>
+        <h2 class='goal-deadline'>
+          期限：<%= goal.deadline %>
+        </h2>
+      </div>
+    
+      <div class='goal-info-area'>
+        <div class='goal-description-text'>
+          <%= goal.description %>
+        </div>
+        <div class='goal-progress-area'>
+          <div class='goal-progress'>
+            <%= goal.progress %>%
+          </div>
+        </div>
+        <div class='goal-edit-area'>
+          <ul>
+            <li><%= link_to '　詳細　', goal_path(goal.id), class: "goal-edit-btn" %></li>
+            <li><%= link_to '進捗入力', "#", class: "goal-edit-btn" %></li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
   <% end %>
 <% end %>
+</div>
 
 
-    <%# 目標がない場合のダミー %>
-    <% unless @goals.exists? %>
-      まだ目標がありません。<br>
-      新しい目標を立てましょう。<br>
-    <% end %>
-      <%# /目標がない場合のダミー %>
+<%# 目標がない場合のダミー %>
+<% unless @goals.exists? %>
+  まだ目標がありません。<br>
+  新しい目標を立てましょう。<br>
+<% end %>
+<%# /目標がない場合のダミー %>
 
-<a href="/goals/new">目標作成</a>
+<div class='goal-create-btn'>
+  <a href="/goals/new" class='create-btn-text'>新規目標作成</a>
+</div>
 
 <%= render "shared/footer" %>

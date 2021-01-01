@@ -1,0 +1,62 @@
+<%= render "shared/header" %>
+
+<%# 社員目標一覧 %>
+<div class='employee-main'>
+  <% @users.each do |user| %>
+    <div class='user-object'>
+
+      <%#--- 上部の社員情報 ---%>
+      <div class='user-header'>
+        <div class='user-icon'>
+        </div>
+        <div class='user-info'>
+          <h3 class='user-header-number'>
+            <%= user.employee_number %>
+          </h3>
+          <h1 class='user-header-name'>
+            <%= user.last_name %>
+            <%= user.first_name %>
+          </h1>
+          <h3 class='user-header-division'>
+            <%= user.division.name %>
+            <%= user.position.name %>
+          </h3>
+        </div>
+      </div>
+      <%#--- 上部の社員情報 ---%>
+
+      <div class='line'></div>
+
+      <%#--- 下部の目標情報 ---%>
+      <div class='user-footer'>
+
+        <%# 目標が未登録の場合 %>
+        <% unless @goals.exists?(user_id: user.id) %>
+          <span class='user-goal-title'>目標がまだ登録されていません。</span>
+        <% end %>
+
+        <% user.goals.first(1).each do |goal| %>
+          <% if user.id == goal.user_id %>
+            <div class='user-goal-title'>
+              <%= goal.title %>
+            </div>
+            <div class='user-goal-info'>
+              <%= goal.description %>
+            </div>
+            <div class='user-goal-progress'>
+              進捗：<%= goal.progress %>％
+            </div>
+            <div class='user-goal-deadline'>
+              期日：<%= goal.deadline %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <%#--- 下部の目標情報 ---%>
+
+    </div>
+  <% end %>
+</div>
+
+
+<%= render "shared/footer" %>

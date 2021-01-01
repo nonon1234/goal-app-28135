@@ -1,0 +1,91 @@
+.employee-main {
+  width: 100%;
+  height: 100%;
+  min-width: 800px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: 'ヒラギノ丸ゴ ProN W4', 'Hiragino Maru Gothic ProN';
+}
+
+.user-object {
+  width: 300px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 4px;
+}
+
+.user-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.user-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.user-info {
+  margin-left: 20px;
+}
+
+.user-header-number,
+.user-header-division {
+  font-size: 12px;
+  color: #999;
+}
+
+.user-header-name {
+  color: #444;
+  margin: 3px 0 0;
+}
+
+.line {
+  margin: 0 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-footer {
+  padding: 20px;
+}
+
+.user-goal-title,
+.user-goal-progress,
+.user-goal-deadline {
+  font-size: 14px;
+  color: #444;
+}
+
+.user-goal-info {
+  height: 56px;
+  background-color:#eee;
+  font-size: 12px;
+  color: #999;
+  padding: 5px;
+  overflow: hidden;
+  white-space: normal;
+  margin: 5px 0 10px 0;
+}
+
+.goalpage-btn {
+  width: 120px;
+  background: #5DBB8B;
+  text-align: center;
+  border-radius: 4px;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.goalpage-btn-text {
+  counter-reset: #fff;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5p;
+}

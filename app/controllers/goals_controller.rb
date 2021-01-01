@@ -19,9 +19,14 @@ class GoalsController < ApplicationController
     end
   end
 
+  def show
+    @goal = Goal.find(params[:id])
+  end
+
   private
 
   def goal_params
     params.require(:goal).permit(:title, :description, :deadline, :progress, :done).merge(user_id: current_user.id)
   end
+
 end
