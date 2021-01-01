@@ -20,6 +20,10 @@ class GoalsController < ApplicationController
     end
   end
 
+  def show
+    @goal = Goal.find(params[:id])
+  end
+
   private
 
   def goal_params
