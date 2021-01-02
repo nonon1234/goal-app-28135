@@ -1,26 +1,23 @@
-header {
-  margin-bottom: 30px;
-}
-
 .top-page-header {
   padding: 2vh 2vw;
   display: flex;
   justify-content: space-between;
-  background-color: #4074BE;
+  background-color: #eee;
+  font-family: 'ヒラギノ丸ゴ ProN W4', 'Hiragino Maru Gothic ProN';
 }
 
 .app-title {
   font-size: 42px;
   font-family: 'Courier New', Courier, monospace;
   text-decoration: none;
-  color: #fff;
+  color: #444;
 }
 
 .nav {
-  font-size: 18px;
+  font-size: 14px;
   display: flex;
   justify-content: space-between;
-
+  color: #444;
 }
 
 .lists-right {
@@ -32,18 +29,16 @@ header {
 .user-last-name {
   text-decoration: none;
   margin-right: 3vw;
-  color: #fff;
-  font-weight: bold;
 }
 
 .header-text {
-  color: #fff;
   margin-right: 3vw;
 }
 
 .logout {
-  margin-left: 3vw;
   text-decoration: none;
-  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 10px 8px;
 }
 
