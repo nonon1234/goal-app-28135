@@ -110,7 +110,10 @@ a {
   margin-bottom: 5p;
 }
 
-
+.dummy-message {
+  display: flex;
+  justify-content: center;
+}
 
 
 /* 進捗入力ボタン押下後のcss */

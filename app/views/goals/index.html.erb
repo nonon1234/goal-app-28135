@@ -67,10 +67,12 @@
 
 
 <%# 目標がない場合のダミー %>
-<div class="dammy-message">
+<div class="dummy-message">
   <% unless @goals.exists?(user_id: current_user.id) %>
-    まだ目標がありません。<br>
-    新しい目標を立てましょう。<br>
+    <div class="dummy-message-text">
+      まだ目標がありません。<br>
+      右下のボタンから新しい目標を立てましょう。<br>
+    </div>
   <% end %>
 </div>
 <%# /目標がない場合のダミー %>
