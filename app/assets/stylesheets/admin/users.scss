@@ -1,16 +1,19 @@
 .employee-main {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   min-width: 800px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   font-family: 'ヒラギノ丸ゴ ProN W4', 'Hiragino Maru Gothic ProN';
+  background: linear-gradient(to bottom right, #2a5b6d, #a1dfb6);
+  padding: 10px;
 }
 
 .user-object {
   width: 300px;
-  background-color: #fff;
+  height: 280px;
+  background-color: rgba(255,255,255,0.7);
   margin: 20px;
   border-radius: 4px;
 }
@@ -31,7 +34,7 @@
 .user-header-number,
 .user-header-division {
   font-size: 12px;
-  color: #999;
+  color: #444;
 }
 
 .user-header-name {
@@ -41,7 +44,7 @@
 
 .line {
   margin: 0 20px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
 }
 
 .user-footer {
