@@ -4,6 +4,9 @@ class GoalsController < ApplicationController
 
   def index
     @goals = Goal.all.order('created_at ASC')
+    if params[:id].present?
+      set_goal
+    end
   end
 
   def new
