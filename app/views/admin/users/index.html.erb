@@ -8,7 +8,9 @@
       <%#--- 上部の社員情報 ---%>
       <div class='user-header'>
         <div class='user-icon'>
-          <%= image_tag user.image, class: "image-img" %>
+          <% if user.image.attached? %>
+            <%= image_tag user.image, class: "image-img" %>
+          <% end %>
         </div>
         <div class='user-info'>
           <h3 class='user-header-number'>
