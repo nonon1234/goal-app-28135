@@ -1,16 +1,17 @@
 # テーブル設計
 
 ## users テーブル
-| Column          | Type    | Options     |
-| --------------- | ------- | ----------- |
-| last_name       | string  | null: false |
-| first_name      | string  | null: false |
-| employee_number | integer | null: false |
-| division_id     | integer | null: false |
-| position_id     | integer | null: false |
-| password        | string  | null: false |
-| goal_count      | integer | default: 0  |
-| email           | string  |             |
+| Column          | Type    | Options                     |
+| --------------- | ------- | --------------------------- |
+| last_name       | string  | null: false                 |
+| first_name      | string  | null: false                 |
+| employee_number | integer | null: false                 |
+| division_id     | integer | null: false                 |
+| position_id     | integer | null: false                 |
+| password        | string  | null: false                 |
+| goal_count      | integer | default: 0                  |
+| email           | string  |                             |
+| admin           | boolean | default: false, null: false |
 
 ### Association
 - has_many :goals

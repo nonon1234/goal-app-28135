@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer :position_id,       null: false
       t.integer :goal_count,        default: 0
       t.string :email,              default: ""
+      t.boolean :admin,             default: false, null: false
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
