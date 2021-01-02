@@ -9,7 +9,7 @@
 
 .login-red-btn {
   width: 100px;
-  background: #ea352d;
+  background: linear-gradient(#ff6c40, #d63838);
   color: #fff;
   line-height: 48px;
   font-size: 14px;
@@ -21,7 +21,7 @@
 .new-registration-btn {
   width: 80px;
   text-align: center;
-  background: #5DBB8B;
+  background: linear-gradient(#64d4cf, #2f82a8);
   color: #fff;
   line-height: 40px;
   font-size: 14px;
