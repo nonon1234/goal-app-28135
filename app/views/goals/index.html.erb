@@ -5,6 +5,7 @@
 <% @goals.each do |goal| %>
   <% if current_user.id == goal.user_id %>
     <div class='goal-object'>
+
       <div class='goal-header'>
         <h1 class='goal-header-text'>
           <%= goal.title %> 
@@ -14,23 +15,51 @@
         </h2>
       </div>
     
-      <div class='goal-info-area'>
+      <div><%= form_with model: @goal, url:goal_path(goal.id), class: 'goal-info-area',local: true do |f|%>
+
         <div class='goal-description-text'>
           <%= goal.description %>
         </div>
+
+        <%# 進捗入力ボタン押下後のビュー %>
+        <% if current_page?(goals_path(id: goal.id)) %>
+        <div class='input-progress-area'>
+          <div class='input-progress-circle'>
+            <%= goal.progress %>%
+          </div>
+          
+          <div class='goal-update-area'>
+            <div>
+              <%= f.range_field :progress,in: 0..100, class:"input-goal-progress", id:"goal-progress" %>
+            </div>
+          </div>
+        </div>
+
+        <div class='goal-edit-area'>
+          <ul>
+            <li><%= link_to '　編集　', edit_goal_path(goal.id), method: :get, class: "goal-edit-btn" %></li>
+            <li><%= f.submit '進捗更新' ,class:"goal-update-btn" %></li>
+          </ul>
+        </div>
+          
+        <%# 進捗入力ボタン押されていない状態のビュー %>
+        <% else %>
         <div class='goal-progress-area'>
-          <div class='goal-progress'>
+          <div class='goal-progress-circle'>
             <%= goal.progress %>%
           </div>
         </div>
         <div class='goal-edit-area'>
           <ul>
             <li><%= link_to '　編集　', edit_goal_path(goal.id), method: :get, class: "goal-edit-btn" %></li>
-            <li><%= link_to '進捗入力', "#", class: "goal-edit-btn" %></li>
+            <li><%= link_to '進捗入力', goals_path(id: goal.id), class: "goal-edit-btn" %></li>
           </ul>
         </div>
-      </div>
-      
+        <% end %>
+        <%# ビューの分岐終了 %>
+        </div>
+        <% end %>
+
     </div>
   <% end %>
 <% end %>
@@ -38,10 +67,14 @@
 
 
 <%# 目標がない場合のダミー %>
-<% unless @goals.exists? %>
-  まだ目標がありません。<br>
-  新しい目標を立てましょう。<br>
-<% end %>
+<div class="dummy-message">
+  <% unless @goals.exists?(user_id: current_user.id) %>
+    <div class="dummy-message-text">
+      まだ目標がありません。<br>
+      右下のボタンから新しい目標を立てましょう。<br>
+    </div>
+  <% end %>
+</div>
 <%# /目標がない場合のダミー %>
 
 <div class='goal-create-btn'>

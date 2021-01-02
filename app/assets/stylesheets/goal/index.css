@@ -58,15 +58,15 @@ a {
 .goal-progress-area {
   width: 100px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.goal-progress {
+.goal-progress-circle {
   margin: 15px 10px;
   text-align: center;
-  line-height: 80px;
-  width: 80px;
-  height: 80px;
+  line-height: 70px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   border: 1px dotted #ccc;
   color: #ccc;
@@ -108,4 +108,50 @@ a {
   display: block;
   font-size: 18px;
   margin-bottom: 5p;
+}
+
+.dummy-message {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* 進捗入力ボタン押下後のcss */
+.input-progress-area {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-progress-circle {
+  margin: 8px 10px;
+  text-align: center;
+  line-height: 70px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px dotted #ccc;
+  color: #ccc;
+}
+
+.goal-update-area {
+  line-height: 10px;
+}
+
+.input-goal-progress{
+  width: 100%;
+}
+
+.goal-update-btn {
+  padding: 10px;
+  height: 34px;
+  background: #ea352d;
+  color: #fff;
+  line-height: 15px;
+  font-size: 14px;
+  border: none;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 7px;
 }
