@@ -1,21 +1,24 @@
 a {
   text-decoration: none;
+  color: #444;
 }
 
 .goal-main {
-  width: 100%;
+  width: 100vw;
   height: 100%;
-  background-color: #fff;
+  min-height: 600px;
+  background: linear-gradient(to bottom right, #2a5b6d, #a1dfb6);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'ヒラギノ丸ゴ ProN W4', 'Hiragino Maru Gothic ProN';
+  padding-top: 10px;
 }
 
 .goal-object {
   width: 700px;
   height: 160px;
-  background-color: white;
+  background-color: rgba(255,255,255,0.7);
   border-radius: 15px;
   margin: 20px 0;
 }
@@ -23,8 +26,8 @@ a {
 .goal-header {
   width: 100%;
   height: 48px;
-  font-size: 22px;
-  background-color: #4074BE;
+  font-size: 18px;
+  background-color: #eee;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   display: flex;
@@ -33,15 +36,15 @@ a {
 
 .goal-header-text {
   line-height: 48px;
-  color: #fff;
+  color: #444;
   margin-left: 14px;
 }
 
 .goal-deadline {
   line-height: 48px;
-  color: #fff;
+  color: #444;
   margin-right: 14px;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .goal-info-area {
@@ -68,7 +71,7 @@ a {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 1px dotted #ccc;
+  background-color: #eee;
   color: #ccc;
 }
 
@@ -82,7 +85,7 @@ a {
 
 .goal-edit-btn {
   padding: 10px;
-  background: #5DBB8B;
+  background: linear-gradient(#64d4cf, #2f82a8);
   color: #fff;
   line-height: 48px;
   font-size: 14px;
@@ -93,10 +96,10 @@ a {
 
 .goal-create-btn {
   width: 120px;
-  background: #5DBB8B;
+  background: linear-gradient(#64d4cf, #2f82a8);
   text-align: center;
   border-radius: 4px;
-  bottom: 32px;
+  bottom: 60px;
   right: 32px;
   position: fixed;
   padding: 15px;
@@ -104,7 +107,7 @@ a {
 
 .create-btn-text {
   counter-reset: #fff;
-  color: #fff;
+  color: #eee;
   display: block;
   font-size: 18px;
   margin-bottom: 5p;
@@ -113,6 +116,11 @@ a {
 .dummy-message {
   display: flex;
   justify-content: center;
+  margin-top: 40px;
+}
+
+.dummy-message-text {
+  color: #eee;
 }
 
 
@@ -131,7 +139,7 @@ a {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  border: 1px dotted #ccc;
+  background-color: #eee;
   color: #ccc;
 }
 
@@ -146,7 +154,7 @@ a {
 .goal-update-btn {
   padding: 10px;
   height: 34px;
-  background: #ea352d;
+  background: linear-gradient(#ff6c40, #d63838);
   color: #fff;
   line-height: 15px;
   font-size: 14px;

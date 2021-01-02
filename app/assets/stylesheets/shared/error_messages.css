@@ -1,7 +1,9 @@
 .error-alert {
   display: flex;
   justify-content: center;
-  margin: 5vh 0;
+  margin: 5vh 2vw;
+  padding: 5px;
+  background-color: rgba(255, 80, 50, 0.3);
 }
 
 .error-message {

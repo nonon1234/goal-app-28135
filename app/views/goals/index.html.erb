@@ -11,7 +11,7 @@
           <%= goal.title %> 
         </h1>
         <h2 class='goal-deadline'>
-          期限：<%= goal.deadline %>
+          期限　<%= goal.deadline %>
         </h2>
       </div>
     
@@ -63,19 +63,19 @@
     </div>
   <% end %>
 <% end %>
-</div>
 
+  <%# 目標がない場合のダミー %>
+  <div class="dummy-message">
+    <% unless @goals.exists?(user_id: current_user.id) %>
+      <div class="dummy-message-text">
+        まだ目標がありません。<br>
+        右下のボタンから新しい目標を立てましょう。<br>
+      </div>
+    <% end %>
+  </div>
+  <%# /目標がない場合のダミー %>
 
-<%# 目標がない場合のダミー %>
-<div class="dummy-message">
-  <% unless @goals.exists?(user_id: current_user.id) %>
-    <div class="dummy-message-text">
-      まだ目標がありません。<br>
-      右下のボタンから新しい目標を立てましょう。<br>
-    </div>
-  <% end %>
 </div>
-<%# /目標がない場合のダミー %>
 
 <div class='goal-create-btn'>
   <a href="/goals/new" class='create-btn-text'>新規目標作成</a>

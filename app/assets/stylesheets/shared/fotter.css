@@ -1,12 +1,7 @@
-body {
-  background-color: #CDDAEF;
-}
-
 footer {
-  margin: 30px 0 auto;
   padding: 10px;
   color: #D8D8D8;
-  background-color: #838383;
+  background-color: #444;
 }
 
 footer p {
