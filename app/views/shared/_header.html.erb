@@ -9,7 +9,7 @@
             <li><%= link_to '管理者ページ', admin_users_path, class: 'header-text' %></li>
           <% end %>
         <% end %>
-        <li><%= link_to current_user.last_name, "#", class: "user-last-name" %></li>
+        <li><%= link_to current_user.last_name, edit_user_registration_path, class: "user-last-name" %></li>
         <li class='header-text'>達成目標数：<%= current_user.goal_count %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     </ul>
